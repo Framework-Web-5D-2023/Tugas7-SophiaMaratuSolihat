@@ -1,16 +1,17 @@
 <?php
-
 namespace App\Models;
 
 use CodeIgniter\Model;
 
-class frameworkModel extends Model{
-    protected $table = 'kelas';
+class MahasiswaModel extends Model
+{
+    protected $table = 'mahasiswa';
     protected $primaryKey ='id';
 
     protected $useTimestamps = true;
 
-    public function getAllKelas(){
+    public function getAllMahasiswa()
+    {
         return $this->findAll();
     }
 }

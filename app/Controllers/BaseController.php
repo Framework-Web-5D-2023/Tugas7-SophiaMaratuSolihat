@@ -54,6 +54,6 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
-        $this->frameworkModel = new \App\Models\frameworkModel();
+        $this->mahasiswaModel = new \App\Models\MahasiswaModel();
     }
 }

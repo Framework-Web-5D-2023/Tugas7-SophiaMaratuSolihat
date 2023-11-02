@@ -2,23 +2,14 @@
 namespace App\Controllers;
 class Home extends BaseController {
 
-    public function index()
+    public function index(): string
     {
-        //$kelas = $this -> frameworkModel -> getAllKelas();
-        //$data =[
-           // "title" => "Home",
-           // "nama" => "Sophia Maratu Solihat",
-           // "biodata" ={
-            //    "Nama" => "Sophia Maratu Solihat",
-           //     "npm" => "2110631170037",
-            //}
-        //]
+        $mahasiswa = $this->mahasiswaModel->getAllMahasiswa();
         $data = [
-            'title' => 'Home Page',
+            'title' => 'Home Page', 
             'nama' => 'Sophia Maratu Solihat',
+            "mahasiswa" => $mahasiswa,
         ];
-       echo view ('templates/header', $data);
-       echo view ('home', $data);
-       echo view ('templates/footer', $data);
+        return view('templates/header', $data) . view('home', $data) . view('templates/footer', $data);
     }
 }
