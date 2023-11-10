@@ -14,6 +14,7 @@ class About extends BaseController {
         echo view('templates/header', $data);
         echo view('about', $data);
         echo view('templates/footer');
+        // echo view('form', $data);
 
     }
 }

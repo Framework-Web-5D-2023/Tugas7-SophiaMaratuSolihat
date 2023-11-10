@@ -7,8 +7,15 @@ class MahasiswaModel extends Model
 {
     protected $table = 'mahasiswa';
     protected $primaryKey ='id';
+    protected $protectFields = false;
 
-    protected $useTimestamps = true;
+    //Dates
+    protected $useTimestamps = false;
+
+    //mengirimkan data kedalam tabel
+    public function create ($data){
+        return $this -> insert($data);
+    }
 
     public function getAllMahasiswa()
     {
