@@ -1,4 +1,4 @@
-<?= $this->extend("views/Home"); ?>
+<?= $this->extend("Views/home"); ?>
 
 <?= $this->section("content"); ?>
 <div class="container">

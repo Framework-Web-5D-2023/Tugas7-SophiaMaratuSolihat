@@ -1,7 +1,6 @@
-<?= $this->extend("views/Home"); ?>
+<?= $this->extend("templates/header"); ?>
 
 <?= $this->section("content"); ?>
-<div class="container">
   <div class="container">
     <h1><?= $title; ?></h1>
     <div class="mt-5">

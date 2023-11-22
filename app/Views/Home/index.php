@@ -1,11 +1,20 @@
+<?= $this->extend("Views/home"); ?>
+
+<?= $this->section("content"); ?>
+<?php $session = session(); ?>
 <div class="container">
-    <h1><?= $title ?></h1>
-    <p>Hello, <?= $nama ?></p>
-    <table class="table caption-top">
-    <caption>Data</caption>
+  <?php if ($session->getFlashdata("success")) : ?>
+    <div class="alert alert-success" role="alert">
+
+      <?= $session->getFlashdata("success"); ?>
+    </div>
+  <?php endif; ?>
+  <h1><?= $title; ?></h1>
+  <table class="table caption-top">
+    <caption>List of users</caption>
     <thead>
       <tr>
-        <th scope="col">No</th>
+        <th scope="col">#</th>
         <th scope="col">Nama</th>
         <th scope="col">NPM</th>
         <th scope="col">Prodi</th>
@@ -29,11 +38,13 @@
       <?php endforeach; ?>
     </tbody>
   </table>
-  
+
+  <!-- Button trigger modal -->
   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-Create
+    Create
   </button>
 
+  <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -66,10 +77,24 @@ Create
                     <input type="text" id="prodi" name="prodi" class="form-control" placeholder="prodi" aria-label="prodi">
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-<div class ="modal-footer">
-    <button type ="button" class="btn btn-secondary"
-    data-bs-dismiss="modal">close</button>
-    <button type="submit" class="btn btn-primary">Save</button>
-</div>
-</form>
+<?= $this->endSection(); ?>
+
+<?= $this->section("script"); ?>
+<script>
+  function sendIdDataDelete() {
+
+  }
+</script>
+<?= $this->endSection(); ?>
