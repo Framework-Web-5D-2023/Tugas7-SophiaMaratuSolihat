@@ -18,6 +18,4 @@
       <span class="d-inline-block mx-3">:</span>
       <h3 class="d-inline-block"><?= $mahasiswa["prodi"]; ?></h3>
     </div>
-  </div>
-</div>
 <?= $this->endSection(); ?>
